@@ -1,1 +1,210 @@
-/* Estilos personalizados para el Laboratorio DPW2 */
+/* ============================================================
+   Estilos personalizados para el Laboratorio DPW2
+   Dashboard Administrativo - Bootstrap 5
+   ============================================================ */
+
+/* ---- Variables globales ---- */
+:root {
+    --sidebar-width: 220px;
+    --sidebar-bg: #1e2a3a;
+    --sidebar-link-color: #c8d6e5;
+    --sidebar-link-hover: #ffffff;
+    --sidebar-link-active-bg: rgba(13, 110, 253, 0.25);
+    --main-bg: #f4f6f9;
+    --font-size-base: 1rem;
+    --font-size-h4: 1.3rem;
+    --card-title-size: 1.1rem;
+}
+
+/* ---- Estilos base (mobile first) ---- */
+body {
+    background-color: var(--main-bg);
+    font-size: var(--font-size-base);
+    color: #333;
+}
+
+/* ---- Sidebar ---- */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    min-height: calc(100vh - 56px);
+    padding-top: 0.5rem;
+    position: sticky;
+    top: 56px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-link {
+    color: var(--sidebar-link-color);
+    border-radius: 6px;
+    padding: 0.55rem 0.75rem;
+    transition: background 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--sidebar-link-hover);
+}
+
+.sidebar-link.active {
+    background-color: var(--sidebar-link-active-bg);
+    color: #4da3ff;
+    font-weight: 600;
+}
+
+/* ---- Área principal ---- */
+.main-content {
+    padding: 1.5rem;
+    min-height: calc(100vh - 56px);
+}
+
+/* ---- Tarjetas de estadísticas ---- */
+.card-stat {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 10px;
+}
+
+.card-stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.icon-box {
+    min-width: 52px;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---- Tabla ---- */
+.table th {
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+}
+
+/* ---- Formulario ---- */
+.needs-validation .form-control,
+.needs-validation .form-select {
+    transition: border-color 0.2s;
+}
+
+/* ============================================================
+   BREAKPOINTS / MEDIA QUERIES
+   Punto de ruptura 1: Móvil (<576px)
+   ============================================================ */
+@media (max-width: 575.98px) {
+    :root {
+        --font-size-base: 0.875rem;
+        --font-size-h4: 1.1rem;
+        --card-title-size: 0.95rem;
+    }
+
+    body {
+        background-color: #ffffff;
+    }
+
+    .main-content {
+        padding: 1rem 0.75rem;
+    }
+
+    .card-stat .card-body {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .icon-box {
+        margin-bottom: 0.5rem;
+    }
+
+    h4 {
+        font-size: var(--font-size-h4);
+    }
+
+    .card-header h5 {
+        font-size: var(--card-title-size);
+    }
+
+}
+
+/* ============================================================
+   BREAKPOINTS / MEDIA QUERIES
+   Punto de ruptura 2: Tablet (576px – 991.98px)
+   ============================================================ */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    :root {
+        --font-size-base: 0.9375rem;
+        --font-size-h4: 1.2rem;
+        --card-title-size: 1rem;
+    }
+
+    body {
+        background-color: #f0f2f5;
+    }
+
+    .main-content {
+        padding: 1.25rem 1rem;
+    }
+
+    .sidebar {
+        background-color: #253447;
+    }
+
+    h4 {
+        font-size: var(--font-size-h4);
+    }
+}
+
+/* ============================================================
+   BREAKPOINTS / MEDIA QUERIES
+   Punto de ruptura 3: Desktop (≥992px)
+   ============================================================ */
+@media (min-width: 992px) {
+    :root {
+        --font-size-base: 1rem;
+        --font-size-h4: 1.3rem;
+        --card-title-size: 1.1rem;
+    }
+
+    body {
+        background-color: var(--main-bg);
+    }
+
+    .main-content {
+        padding: 2rem 1.75rem;
+    }
+
+    .sidebar {
+        background-color: var(--sidebar-bg);
+    }
+
+    h4 {
+        font-size: var(--font-size-h4);
+    }
+}
+
+/* ============================================================
+   BREAKPOINTS / MEDIA QUERIES
+   Punto de ruptura 4: Pantallas grandes (≥1400px)
+   ============================================================ */
+@media (min-width: 1400px) {
+    :root {
+        --font-size-base: 1.0625rem;
+        --font-size-h4: 1.45rem;
+    }
+
+    body {
+        font-size: var(--font-size-base);
+    }
+
+    .main-content {
+        padding: 2.5rem 2.25rem;
+    }
+}
+
